@@ -1,0 +1,153 @@
+:root {
+  /* top text variables */
+  --X-LENGTH: 3rem;
+
+  /* bottom form entry variables */
+  --BUTTON-TEXT-SIZE: 1rem;
+  --BUTTON-TEXT-WIDTH: calc(3 * var(--BUTTON-TEXT-SIZE));
+
+  /* table color variables */
+  --ODD-ROW-COLOR: rgba(253, 253, 253, 0.516);
+  --EVEN-ROW-COLOR: rgb(253, 253, 253);
+}
+
+/* general selectors */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-color: rgb(201, 231, 241);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+header {
+  background-color: var(--ODD-ROW-COLOR);
+}
+
+.database-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tag-container {
+  overflow: auto;
+  /* max-height: 30%; */
+  width: 80%;
+  /* border: 1px solid red; */
+}
+
+input {
+  border: 1px solid rgba(0, 0, 0, 0.249);
+}
+
+/* empty-text selectors 
+   (the text that appears when there are 0 albums) 
+*/
+.empty-text {
+  font-size: max(3vw, 20px);
+}
+
+/* embedded entry selectors */
+
+.embedded-entry .entry-elems input {
+  width: 100%;
+}
+
+.embedded-entry button{
+  width: 24px;
+}
+
+.embedded-entry .entry-elems {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.embedded-entry {
+  display: flex;
+  justify-content: center;
+}
+
+/* embedded-entry color selectors */
+
+.embedded-entry:nth-child(odd) {
+  background-color: var(--ODD-ROW-COLOR);
+}
+
+.embedded-entry:nth-child(even) {
+  background-color: var(--EVEN-ROW-COLOR);
+}
+
+/* this selector is used to put the delete button inline with the form elements. */
+.embedded-entry * {
+  display: inline;
+}
+
+/* submit buttons selectors */
+
+.submit-buttons {
+  font-size: var(--BUTTON-TEXT-SIZE);
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  margin-top: 2rem;
+}
+
+.submit-buttons .elem-pair {
+  display: grid;
+  grid-template-columns: var(--BUTTON-TEXT-WIDTH) 1fr;
+}
+
+.submit-buttons .elem-pair input {
+  grid-column-start: 2;
+}
+
+/* column labels selectors */
+.top-text {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
+  background-color: var(--ODD-ROW-COLOR);
+  margin-bottom: 2rem;
+  /* border: 1px solid black; */
+
+  /* these lines line up the column texts with the form elements excluding the x */
+  width: calc(80% - (0.5 * var(--X-LENGTH)));
+  margin-right: calc(var(--X-LENGTH) * 0.5);
+
+}
+
+/* media query to deal with devices of small widths 
+
+  * currently just puts the submit buttons in one column *
+*/
+
+@media (max-width: 540px) {
+  .submit-buttons {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* media query to fix weird coloring issues that exist beyond 1080px width */
+
+@media (min-width: 1080px) {
+  .tag-container {
+    /* this line prevents weird color stretching beyond 1080px width*/
+    max-width: 865px;
+    justify-content: center;
+  }
+
+  .top-text {
+    /* this line helps the column labels align with the inputs */
+    max-width: 840px;
+  }
+}
