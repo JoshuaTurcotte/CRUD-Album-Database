@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/CRUD-Album-Database/static/css/main.063996aa.css",
+    "main.js": "/CRUD-Album-Database/static/js/main.c7995029.js",
+    "static/js/787.8bcb0127.chunk.js": "/CRUD-Album-Database/static/js/787.8bcb0127.chunk.js",
+    "static/media/logo.svg": "/CRUD-Album-Database/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/CRUD-Album-Database/index.html",
+    "main.063996aa.css.map": "/CRUD-Album-Database/static/css/main.063996aa.css.map",
+    "main.c7995029.js.map": "/CRUD-Album-Database/static/js/main.c7995029.js.map",
+    "787.8bcb0127.chunk.js.map": "/CRUD-Album-Database/static/js/787.8bcb0127.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.063996aa.css",
+    "static/js/main.c7995029.js"
+  ]
+}
